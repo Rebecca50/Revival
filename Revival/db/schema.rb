@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711154605) do
+ActiveRecord::Schema.define(version: 20140712204922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,5 +30,33 @@ ActiveRecord::Schema.define(version: 20140711154605) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "records", force: true do |t|
+    t.string   "course_id"
+    t.string   "userid_di"
+    t.boolean  "registered"
+    t.boolean  "viewed"
+    t.boolean  "explored"
+    t.boolean  "certified"
+    t.string   "final_cc_cname_di"
+    t.string   "loe_di"
+    t.integer  "yob"
+    t.string   "gender"
+    t.decimal  "grade"
+    t.string   "start_time_di"
+    t.string   "last_event_di"
+    t.integer  "nevents"
+    t.integer  "ndays_act"
+    t.integer  "nplay_video"
+    t.integer  "nchapters"
+    t.integer  "nforum_posts"
+    t.string   "roles"
+    t.boolean  "incomplete_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "records", ["course_id"], name: "index_records_on_course_id", using: :btree
+  add_index "records", ["final_cc_cname_di"], name: "index_records_on_final_cc_cname_di", using: :btree
 
 end
