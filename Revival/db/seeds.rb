@@ -20,7 +20,7 @@
 require 'csv'
 
 
-Record.delete_all
+# Record.delete_all
 
 def check_title(course_id)
     if course_id == 'HarvardX/CB22x/2013_Spring'
@@ -55,7 +55,7 @@ end
 
 CSV.foreach("db/HMXPC13_DI_v2_5-14-14.csv") do |row|
 
-  # course_id,check_title(course_id),userid_di,registered,viewed,explored,certified,final_cc_cname_di,loe_di,yob,gender,grade,start_time_di,last_event_di,nevents,ndays_act,nplay_video,nchapters,nforum_posts,roles,incomplete_flag = row
+  course_id,check_title,userid_di,registered,viewed,explored,certified,final_cc_cname_di,loe_di,yob,gender,grade,start_time_di,last_event_di,nevents,ndays_act,nplay_video,nchapters,nforum_posts,roles,incomplete_flag = row
 
 
 

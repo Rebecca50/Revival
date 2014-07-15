@@ -1,57 +1,75 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Revival</title>
   <link rel="stylesheet" href="stylesheets/styles.css">
-  <script src='javascripts/crayola.js'></script>
-  <script src='javascripts/d3.js'></script>
-  <script src='javascripts/scripts.js'></script>
 
       <!-- Libraries -->
     <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
-     <!-- Templates -->
-      <!-- <#script type='text/template' id='student-template'>
-        <%- student.name %> ... is interested in Revival.
-        <button data-action='login'>LogIn</button>
-      </script> -->
 
-      <!-- <#script type='text/template' id='course-template'>
-        <%- course.name %>
+      <script type='text/template' id='course-template'>
+        <%= short_title %>
         <button data-action='Select'>Select</button>
-      </script> -->
+      </script>
 
   <!-- models -->
   <script type="text/javascript" src="javascripts/backbone/models/Course.js"></script>
 
-
-  <!-- collections -->
-  <script type="text/javascript" src="javascripts/backbone/collections/CourseCollection.js"></script>
-
   <!-- views -->
   <script type="text/javascript" src="javascripts/backbone/views/courses/CourseView.js"></script>
-  <script type="text/javascript" src="javascripts/backbone/views/courses/CourseListView.js"></script>
 
+<!-- collections -->
+  <script type="text/javascript" src="javascripts/backbone/collections/CourseCollection.js"></script>
+  <script type="text/javascript" src="javascripts/backbone/views/courses/CourseListView.js"></script>
     <!-- This is the app -->
   <script type="text/javascript" src="javascripts/backbone/app.js"></script>
+
+  <script>
+  $(function(){
+    var listView = RevivalApp.initialize();
+    $('#addBtn').on('click', function() {
+      listView.render();
+    })
+  });
+  </script>
 
 
 </head>
 
 <body>
+<h2>Hello World</h2>
+<p>
+  The time for Revival is now.
+</p>
+
 
   <svg>
   </svg>
 
-    <!-- need a button:
-    <button class='student-form'>
-      <input type="text" name='student-name'>
+
+    <!-- <button class='class-form'>
+      <input type="text" name='class-name'>
     </form> -->
 
+
+
   <ul class="course-options"></ul>
+
+
+  <div id="testContainer" style="background-color: gray; min-height:200px; min-width:200px; color: white;">
+  <button id="addBtn">
+    Revival
+  </button>
+  <br/>
+  <a id="addLink" style="cursor:pointer">
+    Do I retrieve with a link or should they be brought through from Views.Collection?
+  </a>
+</div>
 
 </body>
 </html>
@@ -61,18 +79,7 @@
 
 
 
-      <!-- Bananapp
-      <script type="text/javascript" src='javascripts/backbone/app.js'></script>
 
-      <!-- Models -->
-      <script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
 
-      <!-- Collections -->
-      <script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
 
-      <!-- Views -->
-      <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
-      <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
-
-  </head>
 
