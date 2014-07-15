@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   get '/courses' => 'courses#index'
-  # get '/course/:id' => 'courses#show'
+  get '/course/:id' => 'courses#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

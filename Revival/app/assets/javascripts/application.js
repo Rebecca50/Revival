@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require crayola
+//= require d3
+//= require backbone/models/Course
+//= require backbone/views/courses/CourseView
+//= require backbone/collections/CourseCollection
+//= require backbone/views/courses/CourseListView
+//= require backbone/app
+//= require scripts
+
+_.templateSettings = {
+  interpolate : /\{\{(.+?)\}\}/g
+};

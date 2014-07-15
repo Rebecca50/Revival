@@ -22,7 +22,7 @@ RevivalApp.Views.CourseView = Backbone.View.extend({
   tagName: 'li',
   render: function () {
     var that = this;
-    this.$el.html(this.template()({ course: this.model.attributes }));
+    this.$el.html(this.template()(this.model.attributes));
     this.$el.find('.show-button').on('click', function () {
       RevivalApp.router.navigate("#courses/" + that.model.get('id'), {trigger: true});
     });

@@ -14,3 +14,6 @@ var RevivalApp = RevivalApp || {
   // }
 };
 
+RevivalApp.Models.Course = Backbone.Model.extend({
+  url: '/courses'
+});

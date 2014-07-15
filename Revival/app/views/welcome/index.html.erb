@@ -1,26 +1,32 @@
-<h2>HELLO WORLD!</h2>
+<h2>Hello World</h2>
 <p>
-  The time for Revival is now :<%= Time.now %>
+  The time for Revival is now.
 </p>
 
-<!-- <div ng-controller='TimeCtrl'>
-    <p>{{ clock | date:'medium'}}</p>
-</div> -->
+<svg>
+</svg>
 
+<ul class="course-options"></ul>
 
+<div id="testContainer" style="background-color: gray; min-height:200px; min-width:200px; color: white;">
+  <button id="addBtn">Revival</button>
+  <br/>
+  <a id="addLink" style="cursor:pointer">
+    Do I retrieve with a link or should they be brought through from Views.Collection?
+  </a>
+</div>
 
-<h1>Courses</h1>
+<script type='text/template' id='course-template'>
+  {{ short_title }}
+  <button data-action='Select'>Revival</button>
+</script>
 
-<ul>
-<% @courses.each do |course| %>
-  <li><%= short_title.name %></li>
-  <li>course_id</li>
-<% end %>
-</ul>
-
-
-<!-- <button class='submit' data="/records/<%= article.id %>"> -->
-
-<a href="/page2">Revival</a>
-
-
+<script>
+$(function(){
+  var courses = <%== @courses.to_json %>;
+  var listView = RevivalApp.initialize(courses);
+  $('#addBtn').on('click', function() {
+    listView.render();
+  })
+});
+</script>
