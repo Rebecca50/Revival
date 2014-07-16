@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714232448) do
+ActiveRecord::Schema.define(version: 20140716153948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -59,5 +67,10 @@ ActiveRecord::Schema.define(version: 20140714232448) do
 
   add_index "records", ["course_id"], name: "index_records_on_course_id", using: :btree
   add_index "records", ["final_cc_cname_di"], name: "index_records_on_final_cc_cname_di", using: :btree
+
+  create_table "visualizations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
