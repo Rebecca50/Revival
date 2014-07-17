@@ -15,4 +15,4 @@ Revival aims to display the current revolution in higher education taking place 
 
   * The database `db/seeds.rb` is seeded with a user-friendly course name associated with the original course_id.
 
-Developed by Rebecca Strong & Andrew Madden.
+Developed by Rebecca Strong.

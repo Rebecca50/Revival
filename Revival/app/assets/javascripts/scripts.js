@@ -1,21 +1,15 @@
-// // ************************************
-// // *********** Global Stuff ***********
-// // ************************************
+
 
 // // -- global Audio Vars --
 // var audioContext;
 // var arraybuffer;
 // var fftObject;
 // var audioSource;
-// var samples = 1024;
+// var samples = 641,138;
 
 // // -- global var for svg --
 // var svg;
 
-
-// // / ************************************
-// // // ********* Audio Handling ***********
-// // ************************************
 
 // function loadFile(mp3file) {
 //     var request = new XMLHttpRequest();
@@ -39,20 +33,17 @@
 //     fftObject.fftSize = samples;
 //     audioSource.connect(fftObject);
 //     fftObject.connect(audioContext.destination);
-//     audioSource.noteOn(0); // Drop the needle (play audio)
+//     audioSource.noteOn(0);
 
 //     var data = new Uint8Array(samples);
 
 //     setInterval(function(){
 //       fftObject.getByteFrequencyData(data);
 //       d3Project(data);
-//     }, 10) // repeat rendering project -- DO I WANT THIS?
+//     }, 10) //DO I WANT THIS MANY RENDERINGS?
 // }
 
 
-// //*********************//
-// //****Data-Driven-Documents Domain*****//
-// //*********************//
 
 // Array.prototype.sample = function(){
 // var idx = Math.floor(this.length * Math.random());
@@ -62,9 +53,8 @@
 
 
 //   function d3Project(data){
-//     //where data is just an array of numbers.
 
-// //select Entire SVG
+
 // // var svg = d3.select('svg');
 
 // //Need new circle? If so, build them!
@@ -103,9 +93,6 @@
 
 // }
 
-// //**************************************//
-// //***And...testing, testing, 1, 2, 3****//
-// //**************************************//
 
 // window.onload = function(){
 
