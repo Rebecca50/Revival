@@ -5,16 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# Student.delete_all
-# Course.delete_all
-# Enrollment.delete_all
 
-# CSV.foreach("db/HMXPC13_DI_v2_5-14-14.csv") do |row|
-
-#   # puts count
-#   # count += 1
-
-# #
 
 
 require 'csv'

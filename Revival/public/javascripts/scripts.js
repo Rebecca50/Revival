@@ -13,25 +13,25 @@ function refresh() {
   svg.selectAll(".point").attr("d", path);
 }
 
-var mousePostion, projRotation;
+var mousePosition, projRotation;
 function mousedown() {
-  mousePostion = [d3.event.pageX, d3.event.pageY];
+  mousePosition = [d3.event.pageX, d3.event.pageY];
   projRotation = proj.rotate();
   d3.event.preventDefault();
 }
 function mousemove() {
-  if (mousePostion) {
-    var newMousePostion = [d3.event.pageX, d3.event.pageY]
-    newRotation = [projRotation[0] + (newMousePostion[0] - mousePostion[0])/2, projRotation[1] + (mousePostion[1] - newMousePostion[1])/2];
+  if (mousePosition) {
+    var newMousePosition = [d3.event.pageX, d3.event.pageY]
+    newRotation = [projRotation[0] + (newMousePosition[0] - mousePosition[0])/2, projRotation[1] + (mousePosition[1] - newMousePosition[1])/2];
     proj.rotate(newRotation);
     sky.rotate(newRotation);
     refresh();
   }
 }
 function mouseup() {
-  if (mousePostion) {
+  if (mousePosition) {
     mousemove();
-    mousePostion = null;
+    mousePosition = null;
   }
 }
 
@@ -39,13 +39,13 @@ function drawGlobe(svg, world){
   svg.append("circle")
     .attr("cx", width / 2).attr("cy", height / 2)
     .attr("r", proj.scale())
-    .style("fill", "lightblue");
+    .style("fill", "#4242D6");
 
   svg.append("path")
     .datum(topojson.object(world, world.objects.land))
     .attr("class", "land noclicks")
     .attr("d", path)
-    .style("fill", "lig");
+    .style("fill", "black");
 }
 
 
@@ -96,7 +96,7 @@ window.onload = function(){
               .attr("class", "point")
               .attr("d", path)
               .style('fill', 'white')
-              .style('stroke-width', function(country){ return country.properties.numberRecords/50 + 'px' })
+              .style('stroke-width', function(country){ return country.properties.numberRecords/500 + 'px' })
               .style('stroke', 'yellow')
 
       }

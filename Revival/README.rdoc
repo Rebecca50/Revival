@@ -1,27 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Ruby version:
+ruby 2.1.1p76
 
-* Ruby version
+* System dependencies:
+"javascripts/lib/d3.js"
+"http://d3js.org/d3.v3.min.js"
+"http://d3js.org/topojson.v1.min.js"
 
-* System dependencies
+Gems:
+rails_12factor
+rspec-rails
+httparty
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployment instructions:
+App is hosted on Digital Ocean to address vast size of database, but for demo purposes localhost:3000 is functional.
 
 
 Please feel free to use a different markup language if you do not plan to run

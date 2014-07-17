@@ -51,6 +51,7 @@ function drawGlobe(svg, world){
 
 window.onload = function(){
 
+
   d3.select(window)
       .on("mousemove", mousemove)
       .on("mouseup", mouseup);
@@ -77,7 +78,9 @@ window.onload = function(){
   svg = d3.select("body").append("svg")
           .attr("width", width)
           .attr("height", height)
+          .style('border', '5px solid black')
           .on("mousedown", mousedown);
+
 
   d3.json("javascripts/world.json", function(data){
 
